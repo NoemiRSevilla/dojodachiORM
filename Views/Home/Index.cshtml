@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojodachi</title>
+    <link rel="icon" href="~/img/favicon.ico">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <h1>Fullness: @ViewBag.Fullness &nbsp;&nbsp;&nbsp;&nbsp;Happiness: @ViewBag.Happiness &nbsp;&nbsp;&nbsp;&nbsp;Meals: @ViewBag.Meals &nbsp;&nbsp;&nbsp;&nbsp;Energy: @ViewBag.Energy</h1>
+    <div class="box">
+        @{
+            if (ViewBag.State == "Happy")
+            {
+                <img src="~/img/monsterHappy.jpg" alt="Monster Happy">
+            }
+            else if (ViewBag.State == "Sad")
+            {
+                <img src="~/img/monsterSad.jpg" alt="Monster Sad">
+            }
+            else if (ViewBag.State == "Win")
+            {
+                <img src="~/img/monsterWin.jpg" alt="Monster Win">
+            }
+            else if (ViewBag.State == "Lose")
+            {
+                <img src="~/img/monsterDead.jpg" alt="Monster Dead">
+            }
+        }
+        <h3 class="@ViewBag.State">@TempData["Message"]</h3>
+    </div>
+    @{
+
+        if (ViewBag.State == "Win" || ViewBag.State == "Lose")
+        {
+            
+            <form action="/reset" method="get">
+                <button id="reset" type="submit">Restart?</button>
+            </form>
+        
+        }
+        else
+        {
+            <div class="buttons">
+                <form id="feed" action="/feed" method="post">
+                    <button type="submit">Feed</button>
+                </form>
+                <form id="play" action="/play" method="post">
+                    <button type="submit">Play</button>
+                </form>
+                <form id="work" action="/work" method="post">
+                    <button type="submit">Work</button>
+                </form>
+                <form id="sleep" action="/sleep" method="post">
+                    <button type="submit">Sleep</button>
+                </form>
+            </div>
+        }
+        
+    }
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

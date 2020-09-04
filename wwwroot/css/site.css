@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center
+}
+
+body{
+    margin-top: 3%;
+    margin: 3%
+}
+
+img{
+    width: 30%
+}
+
+.box{
+    outline: 1px solid black;
+    width: 70%;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 2%
+}
+
+button{
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #9500D7
+}
+
+form{
+    display: inline-block
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: auto
+}
+
+#reset{
+    margin: auto;
+    width: 150px
+}
+
+.Happy{
+    color: green
+}
+
+.Sad{
+    color: red
+}
+
+.Win{
+    color: green
+}
+
+.Lose{
+    color: red
+}
